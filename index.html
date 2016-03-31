@@ -4,13 +4,20 @@
   <title></title>
 </head>
 <body>
+  <select ng-init="greeting='Hi'" ng-model="greeting">
+    <option value="Hello">Hello</option>
+    <option value="Greetings">Greetings</option>
+    <option value="Bonjour">Bonjour</option>
+    <option value="Hola">Hola</option>
+    <option value="Hi">Hi</option>
+  </select>
   <label for="fname">First Name</label>
   <input id="fname" type=text ng-model="fname">
 
   <label for="lname">Last Name</label>
   <input id="lname" type="text" ng-model="lname">
 
-  <h1>Hello {{ fname }} {{ lname }}</h1>
+  <h1>{{ greeting }} {{ fname }} {{ lname }}</h1>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
