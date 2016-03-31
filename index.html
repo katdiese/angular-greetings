@@ -69,6 +69,26 @@
   <h2>Subtotal: {{ mealCost | currency }}</h2>
   <h2>Tip: {{ mealCost * tipAmt | currency }}</h2>
 
+  <!-- Mad Lib  -->
+  <h2>Please fill out the following!</h2>
+  <label for="gname">Girl's name</label>
+  <input type="text" ng-model="gname" id="gname">
+  <label for="adj">Adjective</label>
+  <input type="text" ng-model="adj" id="adj">
+  <label for="pnoun1">Plural Noun</label>
+  <input type="text" id="pnoun1" ng-model="pnoun1">
+  <label for="pnoun2">Plural Noun</label>
+  <input type="text" id="pnoun2" ng-model="pnoun2">
+  <label for="insect">An insect, plural</label>
+  <input type="text" id="insect" ng-model="insect">
+  <label for="pnoun3">Plural Noun</label>
+  <input type="text" id="pnoun3" ng-model="pnoun3">
+  <label for="verb">A verb ending in "s"</label>
+  <input type="text" ng-model="verb" id="verb">
+
+  <h2>Mad Libs!!!</h2>
+  <p>I'm in love with {{ gname }}. She's so {{ adj }}!! She has big flat {{ pnoun1 }} and when our {{ pnoun2 }} meet, I get {{ insect }} in my stomach. I've fallen for her like a ton of {{ pnoun3 }}, and she {{ verb }} me, too. But I think she has another lover. What should I do?</p>
+
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
