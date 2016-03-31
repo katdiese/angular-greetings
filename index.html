@@ -35,6 +35,24 @@
   <p>yelling: {{ sentence | uppercase }}</p>
   <p>whispering: {{ sentence | lowercase }}</p>
 
+  {{ 3.14159265359 | number:3 }}
+  {{ 3.14159265359 | number:6 }}
+  {{ 3.14159265359 | number:1 }}
+
+  <label for="digits"><h2>How many digits of pi do you want?</h2></label>
+  <select id="digits" ng-init="digits='2'" ng-model="digits">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select>
+
+  <p>Here you go! The first {{ digits }} digits of pi!</p>
+  <p>{{ 3.14159265359 | number:digits }}</p>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
 </html>
