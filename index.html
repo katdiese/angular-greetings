@@ -2,8 +2,14 @@
 <html ng-app>
 <head>
   <title></title>
+  <!-- ensures handlebars don't show before angular takes over -->
+  <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
 </head>
-<body>
+<body ng-cloak>
   <select ng-init="greeting='Hi'" ng-model="greeting">
     <option value="Hello">Hello</option>
     <option value="Greetings">Greetings</option>
@@ -17,7 +23,11 @@
   <label for="lname">Last Name</label>
   <input id="lname" type="text" ng-model="lname">
 
-  <h1>{{ greeting }} {{ fname }} {{ lname }}</h1>
+  <h1>{{ greeting + " " + fname + " " + lname }}</h1>
+
+  <p>The array [99,49,2] is {{ [99,49,2].length }} items long</p>
+
+  {{3.14159265359 | currency}}
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
