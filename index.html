@@ -25,6 +25,7 @@
 
   <h1>{{ greeting + " " + fname + " " + lname }}</h1>
 
+  <!-- currency filters -->
   <p>The array [99,49,2] is {{ [99,49,2].length }} items long</p>
 
   {{3.14159265359 | currency: "&euro;"}}
@@ -32,9 +33,11 @@
   <label for="sentence"><h2>Say Something</h2></label>
   <input type="text" id="sentence" ng-model="sentence">
 
+  <!-- uppercase/lowercase filters  -->
   <p>yelling: {{ sentence | uppercase }}</p>
   <p>whispering: {{ sentence | lowercase }}</p>
 
+  <!-- Number filters -->
   {{ 3.14159265359 | number:3 }}
   {{ 3.14159265359 | number:6 }}
   {{ 3.14159265359 | number:1 }}
@@ -52,6 +55,20 @@
 
   <p>Here you go! The first {{ digits }} digits of pi!</p>
   <p>{{ 3.14159265359 | number:digits }}</p>
+
+  <!-- little tip calculator -->
+  <h2>Super Useful Tip Calculator</h2>
+  <label for="mealCost">How much did your meal cost?</label>
+  <input id="mealCost" type="number" ng-model="mealCost">
+  <label for="tipAmt">How much do you want to tip?</label>
+  <select id="tipAmt" ng-model="tipAmt">
+    <option value="0.10">10%</option>
+    <option value="0.15">15%</option>
+    <option value="0.20">20%</option>
+  </select>
+  <h2>Subtotal: {{ mealCost | currency }}</h2>
+  <h2>Tip: {{ mealCost * tipAmt | currency }}</h2>
+
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
