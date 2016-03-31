@@ -27,7 +27,13 @@
 
   <p>The array [99,49,2] is {{ [99,49,2].length }} items long</p>
 
-  {{3.14159265359 | currency}}
+  {{3.14159265359 | currency: "&euro;"}}
+
+  <label for="sentence"><h2>Say Something</h2></label>
+  <input type="text" id="sentence" ng-model="sentence">
+
+  <p>yelling: {{ sentence | uppercase }}</p>
+  <p>whispering: {{ sentence | lowercase }}</p>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
